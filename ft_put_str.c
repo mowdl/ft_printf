@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_put_str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-meka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/26 16:01:05 by mel-meka          #+#    #+#             */
-/*   Updated: 2023/11/26 16:01:50 by mel-meka         ###   ########.fr       */
+/*   Created: 2023/11/26 14:41:30 by mel-meka          #+#    #+#             */
+/*   Updated: 2023/11/26 14:56:37 by mel-meka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include <unistd.h>
+int	ft_put_str(char *str)
+{
+	int	i;
 
-int		ft_printf(const char *str, ...);
-
-void	ft_putchar(char c);
-
-int		digits(long n);
-int		put_int(int n);
-int		put_unsigned_int(unsigned int n);
-int		ft_put_str(char *s);
-int		ft_put_hex(unsigned long n, int upper, int pointer);
-
-#endif // !FT_PRINTF_H
+	if (str == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	i = 0;
+	while (str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+	return (i);
+}
