@@ -6,7 +6,7 @@
 /*   By: mel-meka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 15:56:10 by mel-meka          #+#    #+#             */
-/*   Updated: 2023/11/26 16:07:38 by mel-meka         ###   ########.fr       */
+/*   Updated: 2023/11/26 16:31:09 by mel-meka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_printf_switch(const char *str, int i, va_list ptr)
 	else if (str[i + 1] == 'X')
 		r += ft_put_hex(va_arg(ptr, unsigned int), 1, 0);
 	else if (str[i + 1] == 'p')
-		r += ft_put_hex((unsigned long)va_arg(ptr, void *), 1, 1);
+		r += ft_put_hex((unsigned long)va_arg(ptr, void *), 0, 1);
 	else if (str[i + 1] == 's')
 		r += ft_put_str(va_arg(ptr, char *));
 	else if (str[i + 1] == '%')
