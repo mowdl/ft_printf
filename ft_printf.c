@@ -6,7 +6,7 @@
 /*   By: mel-meka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 15:56:10 by mel-meka          #+#    #+#             */
-/*   Updated: 2023/11/26 16:31:09 by mel-meka         ###   ########.fr       */
+/*   Updated: 2023/12/08 22:23:40 by mel-meka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int	ft_printf(const char *str, ...)
 	int		r;
 	va_list	ptr;
 
+	if (str == NULL)
+		return (-1);
 	va_start(ptr, str);
 	r = 0;
 	i = 0;

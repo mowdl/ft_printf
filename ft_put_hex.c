@@ -6,7 +6,7 @@
 /*   By: mel-meka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 14:59:15 by mel-meka          #+#    #+#             */
-/*   Updated: 2023/11/26 16:14:28 by mel-meka         ###   ########.fr       */
+/*   Updated: 2023/12/08 22:25:40 by mel-meka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,14 @@ int	ft_put_hex(unsigned long n, int upper, int pointer)
 	else
 		str = "0123456789abcdef";
 	if (pointer)
+	{
+		if (n == 0)
+		{
+			write(1, "(nil)", 5);
+			return (5);
+		}
 		write(1, "0x", 2);
+	}
 	hex(n, str);
 	return (digits_hex(n) + (pointer != 0) * 2);
 }
